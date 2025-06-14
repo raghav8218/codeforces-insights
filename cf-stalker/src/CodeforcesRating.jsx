@@ -69,7 +69,7 @@ function CodeforcesRating() {
   const inputBorder = darkMode ? '#555' : '#ccc';
 
   return (
-    <div style={{ border:'4rem',minHeight: '100vh', backgroundColor: bgColor, color: textColor, padding: '2rem' }}>
+    <div style={{minHeight: '100vh', backgroundColor: bgColor, color: textColor, padding: '2rem' }}>
       <button
         onClick={() => setDarkMode(!darkMode)}
         style={{
