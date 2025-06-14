@@ -51,5 +51,5 @@ To run this app locally:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/codeforces-insights.git
+   git clone https://github.com/raghav8218/codeforces-insights.git
    cd codeforces-insights
