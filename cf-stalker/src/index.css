@@ -1,27 +1,44 @@
-/* Reset margin and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Full dark background */
-body {
-  background-color: #0f1a1c; /* dark green-blue tone */
-  color: #f0f0f0;
+body[data-theme='dark'],
+body[data-theme='light'] {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
 }
 
-/* Centered input and button styling */
+body[data-theme='dark'] {
+  background-color: #0f1a1c;
+  color: #f0f0f0;
+}
+
+body[data-theme='light'] {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
 input[type="text"] {
   padding: 1rem;
   width: 300px;
-  border: 1px solid #444;
+  border: 1px solid;
   border-radius: 8px;
-  background-color: #1d2a2b;
-  color: #fff;
   font-size: 1rem;
+  outline: none;
+}
+
+body[data-theme='dark'] input[type="text"] {
+  background-color: #1d2a2b;
+  color: #ffffff;
+  border-color: #444;
+}
+
+body[data-theme='light'] input[type="text"] {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ccc;
 }
 
 button {
@@ -39,9 +56,9 @@ button {
 
 button:hover {
   background-color: #ccc;
+  color: #000;
 }
 
-/* Tab styling */
 .tab-button {
   background-color: #1f2b2d;
   color: #f0f0f0;
@@ -50,6 +67,12 @@ button:hover {
   border: none;
   border-radius: 8px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+body[data-theme='light'] .tab-button {
+  background-color: #ddd;
+  color: #000;
 }
 
 .tab-button.active {
@@ -57,7 +80,6 @@ button:hover {
   color: #000;
 }
 
-/* Table styling */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -67,11 +89,19 @@ table {
 th, td {
   padding: 0.75rem;
   text-align: left;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid;
+}
+
+body[data-theme='dark'] th, body[data-theme='dark'] td {
+  border-color: #444;
+}
+
+body[data-theme='light'] th, body[data-theme='light'] td {
+  border-color: #ccc;
 }
 
 a {
-  color: #74c0fc;
+  color: #3498db;
   text-decoration: none;
 }
 
@@ -79,8 +109,10 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Toggle button style */
 .toggle-btn {
   background-color: #636e72;
   color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
 }
